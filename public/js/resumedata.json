@@ -1,0 +1,72 @@
+[   
+    {
+            "Info" : {
+                "name" : "Yasin Yusuf Ahmed",
+                "position" : "Programmer",
+                "country" : "Somalia",
+                "gender" : "Male",
+                "image" : "http://www.weedhsan.com/files/Balballaadhshe.jpg"
+            },
+            "contact" : {
+                "Email" : "yaasiinyuusuf78@gmail.com",
+                "Phone" : "+60176450175",
+                "Address" : "Pv12 condo, Setapak, Wangsamaju, Kuala Lumpur, Malaysia",
+                "website" : "Coming Soon"
+            },
+            "education" : {
+                "highSchool": "Jigjiga Secondary School",
+                "professional": "ACCA( Association of Chartered Certified Accountants )"
+            },
+            "skills" : {
+                "WebDev" : {
+                    "Dev": [
+                        "HTML", 
+                        {"CSS": "Sass"}, 
+                        { "JavaScript": [
+                                {"FrontEnd": [
+                                    "jQuery",
+                                    "AngularJS"
+                                ]},
+                                {"BackEnd" : [
+                                     "NodeJs",
+                                     "Expressjs"
+                                ]},
+                                {"MobileApps": "Ionic Framework"}
+                            ]
+                        },
+                        {"database": "MongoDB"},
+                        {"templating": [
+                            "Handlerbars"
+                        ]},
+                        {"CMS" : "Wordpress"}
+                    ],
+                    "Design": [
+                        "Photoshop"
+                    ]
+                },
+                "ProgrammingLanguages" : [
+                    "Perl", "Python"
+                ],
+                "OS": [
+                    "Windows", "Linux"
+                ]            
+            },
+    
+            "languages": {
+                "Writing": ["English", "arabic"],
+                "speaking" : ["English"]
+            },
+    
+            "hobbies": [
+                "Reading",
+                {"Sports" : [
+                    "Soccer"
+                ]},
+                "Coding",
+                "Designing",
+                "Meeting new people"
+            ],
+    
+            "References" : "Reference will be provided upon requet"    
+    }
+]

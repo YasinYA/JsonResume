@@ -1,0 +1,100 @@
+body {
+	background: #ccccb3;
+}
+
+.welcome {
+	margin-top: 100px;
+}
+
+.wrapper {
+	margin-top: 100px;
+}
+
+ul {
+	list-style: none;
+	margin: 0 0 15px 0;
+}
+
+ul>li {
+	margin: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+p {
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif; 
+}
+
+h1, h2, h3 {
+	font-family: 'Roboto Slab', serif;
+	color: #339966;
+}
+
+h1:hover, h2:hover, h3:hover {
+	color: #777777 !important;
+}
+
+.style1 {
+	border-top: 1px solid #777;
+	box-shadow: 0 0 2px 0;
+}
+
+.img-local {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid #ccc;
+}
+
+.img-local:hover {
+	border: 5px solid #339966;
+}
+
+.info {
+	display: block !important;
+}
+
+.infopar {
+	display: inline-block !important;
+}
+
+.extMar1 {
+	margin-top: 20px !important;
+	margin-left: 30px !important;
+}
+
+.extMar2 {
+	margin-top: 10px !important;
+	margin-left: 30px !important;
+}
+
+.bor {
+	border: 1px solid #000;
+}
+
+.local {
+	padding: 30px;
+}
+
+.cont {
+	display: inline-block !important;
+	margin: 0 20px;
+}
+
+.site {
+	margin-top: 20px !important;
+	margin-left: 20px !important;
+}
+
+.lang {
+	margin: 20px 0 !important;
+}
+
+.jumbotron {
+	background: #ddd;
+}
+
+.jumbotron:hover {
+	box-shadow: 0px 0px 4px #000 !important;
+}
