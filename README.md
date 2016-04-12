@@ -1,2 +1,2 @@
 # JsonResume
-Your Resume/CV in fson format
+Resume/CV in JSON format
