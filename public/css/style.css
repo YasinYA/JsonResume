@@ -31,9 +31,11 @@ h1, h2, h3 {
 	color: #339966;
 }
 
-h1:hover, h2:hover, h3:hover {
+/*the hover of the of the text is being remove*/
+
+/*h1:hover, h2:hover, h3:hover {
 	color: #777777 !important;
-}
+}*/
 
 .style1 {
 	border-top: 1px solid #777;
