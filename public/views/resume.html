@@ -1,158 +1,135 @@
 <div class="container wrapper" ng-init="getData()">
-		<div class="row" ng-repeat="one in data">
-			<div class="col-sm-12">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<img ng-src="{{one.Info.image}}" class="img-responsive img-local center-block">
-						</div>
+	
+	<div class="row" ng-repeat="one in data">
+		
+		<div class="col-sm-12">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<img ng-src="{{one.Info.image}}" class="img-responsive img-local center-block">
 					</div>
 				</div>
-				<div class="info text-center">
+			</div>
+			<div class="info text-center">
+				<div>
+						<h1 class="extMar1">{{one.Info.name}}</h1>
+						<h2 class="extMar2">{{one.Info.position}}</h2>
 					<div>
-							<h1 class="extMar1">{{one.Info.name}}</h1>
-							<h2 class="extMar2">{{one.Info.position}}</h2>
-						<div>
-							<p class="infopar extMar2">country: {{one.Info.country}}</p>
-							<p class="infopar extMar2">gender: {{one.Info.gender}}</p>
-						</div>
+						<p class="infopar extMar2">Country: {{one.Info.country}}</p>
+						<p class="infopar extMar2">Gender: {{one.Info.gender}}</p>
 					</div>
 				</div>
+			</div>
 
-				<hr class="style1">
-				
-				<div class="contact">
-					<div class="row jumbotron">
-						<div class="col-sm-4">
-							<h2>Contact</h2>
-						</div>
-						<div class="col-sm-8 local">
-							<p class="cont">Emial:  {{one.contact.Email}}</p>
-							<p class="cont">Phone: {{one.contact.Phone}}</p>
-							<p class="site">Website: {{one.contact.website}}</p>
-							<p class="site">Address: {{one.contact.Address}}</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="education">
-					<div class="row jumbotron">
-						<div class="col-sm-4">
-							<h2>Education</h2>
-						</div>
-						<div class="col-sm-8">
-							<p class="extMar1">High School: {{one.education.highSchool}}</p>
-							<p class="extMar1">Proffesional Qualification: {{one.education.professional}}</p>
-						</div>						
-					</div>
-				</div>
+			<hr class="style1">
 
-				<div class="skills row">
-					<div class="container jumbotron">
-						<h2>Skills</h2>
-					<div class="col-sm-6">
-						<h3>Web Development</h3>
-						<ul>
-							<li>{{one.skills.WebDev.Dev[0]}}</li>
-							<li>CSS
-								<ul>
-									<li>{{one.skills.WebDev.Dev[1].CSS}}</li>
-								</ul>
-							</li>
-							<li>JavaScript 
-								<ul>
-									<li>front-end
-										<ul ng-repeat="m in one.skills.WebDev.Dev[2].JavaScript[0].FrontEnd">
-											<li>{{m}}</li>
-										</ul>
-									</li>
-									<li>Back-End
-										<ul ng-repeat="b in one.skills.WebDev.Dev[2].JavaScript[1].BackEnd">
-											<li>{{b}}</li>
-										</ul>
-									</li>
-									<li>mobile apps
-										<ul>
-											<li>{{one.skills.WebDev.Dev[2].JavaScript[2].MobileApps}}</li>
-										</ul>
-									</li>
-								</ul>
-									<li>Databases
-										<ul>
-											<li>{{one.skills.WebDev.Dev[3].database}}</li>
-										</ul>
-									</li>
-									<li>Templating Languages
-										<ul ng-repeat="i in one.skills.WebDev.Dev[4].templating">
-											<li>{{i}}</li>
-										</ul>
-									</li>
-									<li>CMS
-										<ul>
-											<li>{{one.skills.WebDev.Dev[5].CMS}}</li>
-										</ul>
-									</li>
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-6">
-						<h3>Web Design</h3>
-						<ul ng-repeat="o in one.skills.WebDev.Design">
-							<li>{{o}}</li>
-						</ul>
-						<h3>Programming Languages</h3>
-						<ul ng-repeat="h in one.skills.ProgrammingLanguages">
-							<li>{{h}}</li>
-						</ul>
-
-						<h3>OS</h3>
-						<ul ng-repeat="j in one.skills.OS">
-							<li>{{j}}</li>
-						</ul>
-					</div>
-					</div>
-				</div>
-
-				<div class="languages">
-					<div class="row jumbotron">
-						<div class="col-sm-4">
-							<h2>Languages</h2>
-						</div>
-						<div class="col-sm-8 row">
-							<div class="col-sm-4 lang">
-								<h3>Writing</h3>
-								<ul ng-repeat="a in one.languages.Writing">
-									<li>{{a}}</li>
-								</ul>
+			<div class="contact container">
+				<div class="row jumbotron">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-8">
+							<div>
+								<h2>Contacts</h2>
 							</div>
-							<div class="col-sm-4 lang">
-								<h3>Speaking</h3>
-								<ul ng-repeat="a in one.languages.speaking">
-									<li>{{a}}</li>
-								</ul>
+							<div ng-repeat="(key, val) in one.contact">
+								<p ng-if="'Email' === key" class="cont">{{key}} :<a href="mailto:{{val}}">{{val}}</a></p>
+								<p class="cont" ng-if="'Email' !== key">{{key}}:  {{val}}</p>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="education container">
+				<div class="row jumbotron">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-8">
+								<h2>Education</h2>
+							
+							<div ng-repeat="(key, val) in one.education">
+								<p>{{key}}: {{val}}</p>
+							</div>	
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+
+			<div class="skills container">
+					<div class="row jumbotron">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="table-responsive">
+								  <table class="table table-condense">
+								      <thead>
+								        <tr>
+						                  <th>
+						                    Skills
+						                  </th>
+						                  <th>
+						                    Comfortability
+						                  </th>
+						                </tr>
+								      </thead>
+								      <tbody>
+								        <tr ng-repeat="skill in one.skills">
+								          <td ng-repeat="(key, val) in skill">{{key}}</td>
+								          <td ng-repeat="(key, val) in skill">
+								          	<div class="progress">
+								          	  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{val}}%;">
+								          	  	{{val}}
+								          	    <span class="sr-only">60% Complete</span>
+								          	  </div>
+								          	</div>
+								          </td>
+								        </tr>
+								      </tbody>
+								    </table>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="hobbies">
+				<div class="languages container">
 					<div class="row jumbotron">
-						<div class="col-sm-4">
-							<h2>Hobbies</h2>
-						</div>
-						<div class="col-sm-8 row">
-							<div class="col-sm-4 extMar2">
-								<p>{{one.hobbies[0]}}</p>
-								<p>Sports 
-									<ul ng-repeat="n in one.hobbies[1].Sports">
-										<li>{{n}}</li>
-									</ul>
-								</p>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-8">
+									<h2>Languages</h2>
+								
+								<div class="row">
+									<div class="col-sm-4 lang" ng-repeat="(key, val) in one.languages">
+										<h3>{{key}}</h3>
+										<ul ng-repeat="(key, val) in one.languages.Writing">
+											<li>{{val}}</li>
+										</ul>
+									</div>
+								</div>
+								</div>
 							</div>
-							<div class="col-sm-4 extMar2">
-								<p>{{one.hobbies[2]}}</p>
-								<p>{{one.hobbies[3]}}</p>
-								<p>{{one.hobbies[4]}}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="hobbies container">
+					<div class="row jumbotron">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-8">
+									<h2>Hobbies</h2>
+								
+								<div class="row" ng-repeat="(key, val) in one.hobbies">
+									<div class="col-sm-4 extMar2">
+										<ul>
+											<li>{{val}}</li>
+										</ul>
+									</div>
+									
+								</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -167,6 +144,6 @@
 					</div>
 				</div>
 
-			</div>
 		</div>
 	</div>
+</div>
