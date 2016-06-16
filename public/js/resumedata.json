@@ -38,7 +38,7 @@
             ],
 
             "languages": {
-                "Writing": ["English", "arabic"],
+                "Writing": ["English", "Arabic"],
                 "Speaking" : ["English"]
             },
     
@@ -50,6 +50,6 @@
                 "Meeting new people"
             ],
     
-            "References" : "Reference will be provided upon requet"    
+            "References" : "Reference will be provided upon request"    
     }
 ]
