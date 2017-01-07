@@ -1,0 +1,24 @@
+{
+  "name": "jsonresume",
+  "description": "JSON format resume",
+  "main": "server.js",
+  "authors": [
+    "Yasin Yusuf Ahmed"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/YasinYA/Json_Resume",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.7.0"
+  }
+}

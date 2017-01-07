@@ -1,149 +1,233 @@
-<div class="container wrapper" ng-init="getData()">
-	
-	<div class="row" ng-repeat="one in data">
+<!DOCTYPE html>
+<html ng-app="JSONResume">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>JSON Resume</title>
+
+	<!-- bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<!-- google css -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	<!-- font-awesome css -->
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
+	<!-- Custom css -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+	<div ui-view>
+		<div class="container top-contianer">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-6">
+							<a href="/data" class="btn btn-success pull-left">Download PDF</a>
+						</div>
+						<div class="col-md-6">
+							<a href="/data" class="btn btn-success pull-right">View Json</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<div class="container" ng-init="getData()">
+			<div class="row" ng-repeat="one in data">
 		
-		<div class="col-sm-12">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<img ng-src="{{one.Info.image}}" class="img-responsive img-local center-block">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12">
+							<img ng-src="{{one.Info.image}}" class="img-responsive img-local center-block">
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="info text-center">
-				<div>
-						<h1 class="extMar1">{{one.Info.name}}</h1>
-						<h2 class="extMar2">{{one.Info.position}}</h2>
-					<div>
-						<p class="infopar extMar2">Country: {{one.Info.country}}</p>
-						<p class="infopar extMar2">Gender: {{one.Info.gender}}</p>
-					</div>
-				</div>
-			</div>
-
-			<hr class="style1">
-
-			<div class="contact container">
-				<div class="row jumbotron">
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-8">
+					<div class="row">
+						<div class="col-md-12 text-center">
 							<div>
-								<h2>Contacts</h2>
-							</div>
-							<div ng-repeat="(key, val) in one.contact">
-								<p ng-if="'Email' === key" class="cont">{{key}} :<a href="mailto:{{val}}">{{val}}</a></p>
-								<p class="cont" ng-if="'Email' !== key">{{key}}:  {{val}}</p>
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="education container">
-				<div class="row jumbotron">
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-8">
-								<h2>Education</h2>
-							
-							<div ng-repeat="(key, val) in one.education">
-								<p>{{key}}: {{val}}</p>
-							</div>	
-							</div>
-						</div>
-					</div>					
-				</div>
-			</div>
-
-			<div class="skills container">
-					<div class="row jumbotron">
-						<div class="col-sm-12">
-							<div class="row">
-								<div class="table-responsive">
-								  <table class="table table-condense">
-								      <thead>
-								        <tr>
-						                  <th>
-						                    Skills
-						                  </th>
-						                  <th>
-						                    Comfortability
-						                  </th>
-						                </tr>
-								      </thead>
-								      <tbody>
-								        <tr ng-repeat="skill in one.skills">
-								          <td ng-repeat="(key, val) in skill">{{key}}</td>
-								          <td ng-repeat="(key, val) in skill">
-								          	<div class="progress">
-								          	  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{val}}%;">
-								          	  	{{val}}
-								          	    <span class="sr-only">60% Complete</span>
-								          	  </div>
-								          	</div>
-								          </td>
-								        </tr>
-								      </tbody>
-								    </table>
+								<h1>{{one.Info.name}}</h1>
+								<h2>{{one.Info.position}}</h2>
+								<div>
+									<p>Country : {{one.Info.country}}</p>
+									<p>Gender : {{one.Info.gender}}</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="languages container">
-					<div class="row jumbotron">
-						<div class="col-sm-12">
-							<div class="row">
-								<div class="col-sm-8">
-									<h2>Languages</h2>
-								
+					<div class="row">
+						<div class="col-md-12">
+							<hr class="linestyle">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="jumbotron">
 								<div class="row">
-									<div class="col-sm-4 lang" ng-repeat="(key, val) in one.languages">
-										<h3>{{key}}</h3>
-										<ul ng-repeat="(key, val) in one.languages.Writing">
-											<li>{{val}}</li>
-										</ul>
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-12">
+												<h2><i class="fa fa-address-card" aria-hidden="true"></i> CONTACTS</h2>
+											</div>
+											<div class="col-md-12" ng-repeat="(key, val) in one.contact">
+												<p ng-if="'email' === key">{{key|cap_first_letter}}  : <a href="mailto:{{val}}">{{val}}</a></p>
+												<p ng-if="'phone' === key">{{key|cap_first_letter}}  : <a href="tel:{{val}}">{{val}}</a></p>
+												<p ng-if="'email' !== key && 'phone' !== key">{{key|cap_first_letter}} : {{val}}</p>
+											</div>
+										</div>
 									</div>
-								</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="hobbies container">
-					<div class="row jumbotron">
-						<div class="col-sm-12">
-							<div class="row">
-								<div class="col-sm-8">
-									<h2>Hobbies</h2>
-								
-								<div class="row" ng-repeat="(key, val) in one.hobbies">
-									<div class="col-sm-4 extMar2">
-										<ul>
-											<li>{{val}}</li>
-										</ul>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="jumbotron">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-12">
+												<h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> EDUCATION</h2>
+											</div>
+											<div class="col-md-12" ng-repeat="(key, val) in one.education">
+												<p>{{key}} : {{val}}</p>
+											</div>
+										</div>	
 									</div>
-									
 								</div>
+							</div>					
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">						
+							<div class="jumbotron">
+								<div class="row">
+									<div class="col-md-12">
+										<h2><i class="fa fa-cog" aria-hidden="true"></i> SKILLS</h2>
+									</div>
+									<div class="col-md-12">
+										<div class="table-responsive">
+											<table class="table table-condense">
+												<thead>
+													<tr>
+																<th>
+																	Skills
+																</th>
+																<th>
+																	Comfortability
+																</th>
+															</tr>
+												</thead>
+												<tbody>
+													<tr ng-repeat="skill in one.skills">
+														<td ng-repeat="(key, val) in skill">{{key}}</td>
+														<td ng-repeat="(key, val) in skill">
+															<div class="progress">
+																<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{val}}%;">
+																	{{val}}
+																	<span class="sr-only">60% Complete</span>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="container">
-					<div class="row jumbotron">
-						<div class="col-sm-12">
-							<h2>Reference</h2>
-							<p>{{one.References}}</p>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="jumbotron">
+								<div class="row">
+									<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-12">
+											<h2><i class="fa fa-language" aria-hidden="true"></i> LANGUAGES</h2>
+										</div>
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-sm-4" ng-repeat="(key, val) in one.languages">
+													<h3>{{key}}</h3>
+													<ul ng-repeat="(key, val) in one.languages.Writing">
+														<li>{{val}}</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
+					<div class="row">
+						<div class="col-md-12">
+							<div class="jumbotron">	
+								<div class="row">
+									<div class="col-md-12">
+										<h2><i class="fa fa-heart" aria-hidden="true"></i> HOBBIES</h2>
+									</div>
+									<div class="col-md-12">
+										<div class="row" ng-repeat="(key, val) in one.hobbies">
+											<div class="col-sm-4">
+												<ul>
+													<li>{{val}}</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="jumbotron">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-6">
+												<p class="pull-left copyright">&copy;2017 Yasin Yusuf Ahmed</p>
+											</div>
+											<div class="col-md-6">
+												<div class="list-group list-group-horizontal pull-right">
+													<a href="https://www.linkedin.com/in/yasin-yusuf-50395b111?trk=nav_responsive_tab_profile_pic" class="list-group-item linkedin"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+
+													<a href="https://github.com/YasinYA" class="list-group-item github"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+
+													<a href="https://www.facebook.com/ugaas.yuusuf.52" class="list-group-item facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+
+													<a href="https://www.instagram.com/yasinyusuf/?hl=en" class="list-group-item insta"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+
+		
+
+	<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+</body>
+</html>

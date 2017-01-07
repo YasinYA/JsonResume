@@ -2,12 +2,14 @@ body {
 	background: #ccccb3;
 }
 
-.welcome {
-	margin-top: 100px;
+.top-contianer {
+	margin-top: 20px;
 }
 
-.wrapper {
-	margin-top: 100px;
+h1, h2, h3 {
+	font-family: 'Roboto Slab', serif;
+	color: #339966;
+	margin-bottom: 20px;
 }
 
 ul {
@@ -20,76 +22,15 @@ ul>li {
 	font-size: 16px;
 }
 
-p {
-	font-size: 18px;
-	font-family: 'Open Sans', sans-serif; 
-}
-
-h1, h2, h3 {
-	font-family: 'Roboto Slab', serif;
-	color: #339966;
-}
-
-/*the hover of the of the text is being remove*/
-
-/*h1:hover, h2:hover, h3:hover {
-	color: #777777 !important;
-}*/
-
-.style1 {
-	border-top: 1px solid #777;
-	box-shadow: 0 0 2px 0;
-}
-
 .img-local {
-	width: 150px;
-	height: 150px;
+	width: 154px;
+	height: 154px;
 	border-radius: 50%;
-	border: 5px solid #ccc;
+	border: 5px solid rgba(121, 85, 72, 0.39);
 }
 
 .img-local:hover {
 	border: 5px solid #339966;
-}
-
-.info {
-	display: block !important;
-}
-
-.infopar {
-	display: inline-block !important;
-}
-
-.extMar1 {
-	margin-top: 20px !important;
-	margin-left: 30px !important;
-}
-
-.extMar2 {
-	margin-top: 10px !important;
-	margin-left: 30px !important;
-}
-
-.bor {
-	border: 1px solid #000;
-}
-
-.local {
-	padding: 30px;
-}
-
-.cont {
-	display: inline-block !important;
-	margin: 0 10px;
-}
-
-.site {
-	margin-top: 20px !important;
-	margin-left: 20px !important;
-}
-
-.lang {
-	margin: 20px 0 !important;
 }
 
 .jumbotron {
@@ -98,4 +39,59 @@ h1, h2, h3 {
 
 .jumbotron:hover {
 	box-shadow: 0px 0px 4px #000 !important;
+}
+
+
+.jumbotron p{
+	font-size: 16px;
+}
+
+.linestyle {
+	border-top: 1px solid #777;
+	box-shadow: 0 0 2px 0;
+}
+
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+}
+.list-group-horizontal .list-group-item {
+	margin-bottom: 0;
+	margin-left:-4px;
+	margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+	border-top-right-radius:0;
+	border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+	border-top-right-radius:4px;
+	border-bottom-left-radius:0;
+}
+
+.list-group-item {
+	background: transparent;
+}
+
+.list-group .linkedin:hover {
+	background:#0077b5;
+	color: white;
+}
+
+.list-group .facebook:hover {
+	background: #4867aa;
+	color: white;
+}
+
+.list-group .insta:hover {
+	background: #f15d41;
+	color: black;
+}
+
+.list-group .github:hover {
+	background: grey;
+	color: black;
+}
+
+.copyright {
+	margin-top: 20px;
 }
